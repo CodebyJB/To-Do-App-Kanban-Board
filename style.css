@@ -4,9 +4,23 @@
   box-sizing: border-box;
 }
 body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.5;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+:root {
+  --border: 1px solid grey;
+  --light_bg: lightgrey;
+  --dark_bg: purple;
+}
+.handlee {
+  font-family: "Handlee", cursive;
+}
+.amatic {
+  font-family: "Amatic SC", cursive;
+}
+.indie_flower {
+  font-family: "Indie Flower", cursive;
 }
 input,
 button,
@@ -17,4 +31,71 @@ select {
 img {
   display: block;
   max-width: 100%;
+}
+.wrapper {
+  max-width: 85vw;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+}
+.container h2 {
+  border-bottom: var(--border);
+  background-color: var(--dark_bg);
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  grid-template-rows: 1fr 5fr;
+  gap: 0.5rem;
+}
+.grid_item {
+  min-height: 20rem;
+  border: 1px solid grey;
+  background-color: var(--light_bg);
+  text-align: center;
+}
+.add_task {
+  border: 1px solid grey;
+  background-color: var(--light_bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.add_task input {
+  width: 100%;
+  cursor: pointer;
+}
+.add_task button {
+  padding: 0 1rem;
+  cursor: pointer;
+  background-color: var(--dark_bg);
+  border: none;
+}
+/* .add_task button:hover {
+  
+} */
+.color {
+  padding: 0 1rem;
+}
+.one {
+  background-color: #ff65a3;
+}
+.two {
+  background-color: #7afcff;
+}
+.three {
+  background-color: #fff740;
+}
+.to_do_container {
+  border: var(--border);
+  max-width: 100%;
+  min-height: 3rem;
+  margin: 1rem;
+  cursor: grab;
+  position: relative;
 }
