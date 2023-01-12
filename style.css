@@ -7,20 +7,17 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
-}
-:root {
-  --border: 1px solid grey;
-  --light_bg: lightgrey;
-  --dark_bg: purple;
-}
-.handlee {
   font-family: "Handlee", cursive;
 }
-.amatic {
-  font-family: "Amatic SC", cursive;
-}
-.indie_flower {
-  font-family: "Indie Flower", cursive;
+:root {
+  --border: 1px solid #8b8589;
+  --border-radius: 5px;
+  --light_bg: lightgrey;
+  --dark_bg: #a76bcf;
+  --yellow: #fff740;
+  --pink: #ff65a3;
+  --blue: #7afcff;
+  --white: white;
 }
 input,
 button,
@@ -51,9 +48,12 @@ h1 {
 }
 .grid_item {
   min-height: 20rem;
+  max-height: 80vh;
+  overflow: auto;
   border: 1px solid grey;
   background-color: var(--light_bg);
   text-align: center;
+  border-radius: var(--border-radius);
 }
 .add_task {
   border: 1px solid grey;
@@ -65,37 +65,52 @@ h1 {
   padding: 1rem;
   flex-wrap: wrap;
   gap: 0.5rem;
+  border-radius: var(--border-radius);
 }
 .add_task input {
-  width: 100%;
   cursor: pointer;
+  border-radius: var(--border-radius);
+  border: none;
 }
 .add_task button {
   padding: 0 1rem;
   cursor: pointer;
   background-color: var(--dark_bg);
   border: none;
+  border-radius: var(--border-radius);
 }
-/* .add_task button:hover {
-  
-} */
+.add_task button:hover {
+  color: var(--white);
+}
 .color {
   padding: 0 1rem;
 }
 .one {
-  background-color: #ff65a3;
+  background-color: var(--pink);
 }
 .two {
-  background-color: #7afcff;
+  background-color: var(--yellow);
 }
 .three {
-  background-color: #fff740;
+  background-color: var(--blue);
 }
 .to_do_container {
   border: var(--border);
+  background-color: var(--white);
   max-width: 100%;
   min-height: 3rem;
   margin: 1rem;
+  padding: 0 0.5rem;
   cursor: grab;
-  position: relative;
+  border-radius: var(--border-radius);
+  text-align: start;
+  overflow-wrap: break-word;
+}
+.task_foot {
+  display: flex;
+  justify-content: space-between;
+  color: var(--dark_bg);
+}
+.delete_btn {
+  cursor: pointer;
 }
