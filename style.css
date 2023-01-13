@@ -85,13 +85,13 @@ h1 {
 .color {
   padding: 0 1rem;
 }
-.one {
+.high {
   background-color: var(--pink);
 }
-.two {
+.med {
   background-color: var(--yellow);
 }
-.three {
+.soso {
   background-color: var(--blue);
 }
 .to_do_container {
