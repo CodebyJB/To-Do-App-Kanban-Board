@@ -1,5 +1,4 @@
-# 
-To-Do-App / Kanban-Board 
+# To-Do-App / Kanban-Board 
 
 ## Description:
 A Kanban board is a tool that provides a visual system to manage project tasks and workflows. 
@@ -14,4 +13,5 @@ A Kanban board is a tool that provides a visual system to manage project tasks a
 * Task content editable
 * Delete task option
 
-## README
+## Demo:
+View project demo at https://jb-to-do-app.netlify.app/
