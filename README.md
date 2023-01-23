@@ -1,26 +1,17 @@
-# PROJECT TEMPLATE
+# To-Do-App / Kanban-Board 
 
-For a quick start ...
+## Description:
+A Kanban board is a tool that provides a visual system to manage project tasks and workflows. 
 
-## FONTS:
-* https://fonts.google.com/
-* https://gwfh.mranftl.com/fonts
 
-## FAVICON:
-* https://www.favicon-generator.org/
-* https://favicon.io/
+## Features:
+* Saves data in the localStorage
+* Drag & Drop API
+* Color Code Priority of tasks
+* Set a Due date to task
+* Sort task automatically (Due date)
+* Task content editable
+* Delete task option
 
-## ICONS:
-* https://fontawesome.com/search?m=free&o=r
-
-## README
-1. Project Title
-2. Description
-3. Features
-4. How to use
-5. Technologies
-6. Collaborators
-7. License
-
-## Basic writing and formatting syntax
-* https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax 
+## Demo:
+View project demo at https://jb-to-do-app.netlify.app/
