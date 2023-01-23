@@ -23,7 +23,7 @@
   <body>
     <div class="wrapper">
       <h1>To Do App / Kanban Board</h1>
-      <section class="add_task">
+      <section class="add_task" >
         <input type="text" name="task" id="task_input" /><label for="date"
           >Due to</label
         >
@@ -36,14 +36,18 @@
         ><button id="add_btn">Add task</button>
       </section>
       <div class="container">
-        <section class="to_do grid_item columns">
+        <section class="to_do grid_item columns" id="to_do">
           <h2>To Do</h2>
         </section>
-        <section class="in_progress grid_item columns">
+        <section class="in_progress grid_item columns" id="in_progress">
           <h2>In Progress</h2>
         </section>
-        <section class="backlog grid_item columns"><h2>Backlog</h2></section>
-        <section class="done grid_item columns"><h2>Done</h2></section>
+        <section class="backlog grid_item columns" id="backlog">
+          <h2>Backlog</h2>
+        </section>
+        <section class="done grid_item columns" id="done">
+          <h2>Done</h2>
+        </section>
       </div>
     </div>
   </body>

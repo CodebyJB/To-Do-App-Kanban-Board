@@ -8,7 +8,14 @@ const addBtn = document.getElementById("add_btn");
 const toDoContainer = document.querySelector(".to_do");
 
 const todos = [];
-let date, priority, task;
+const inProgress = [];
+const backLog = [];
+const done = [];
+let date, priority, task, taskId;
+
+// const id =
+//   Math.random().toString(36).substring(2, 5) +
+//   Math.random().toString(36).substring(2, 5);
 
 const sortTodos = () => {
   todos.sort((a, b) => {
@@ -28,24 +35,33 @@ function dragStart() {
 }
 
 function dragEnd() {
-  //   this.className = "to_do_container";
   dragItem = null;
 }
 
 function dragDrop() {
   this.append(dragItem);
-  console.log(this);
-  console.log(this.children);
+  console.log(this.id);
+  // console.log(this.childNodes);
+  // console.log(this.children);
 }
 
 function dragOver(e) {
   e.preventDefault();
 }
+
 const insertTaskContainer = (dueDate, colorPriority, todoTask) => {
   const newTaskContainer = document.createElement("div");
   newTaskContainer.classList.add("to_do_container");
   toDoContainer.append(newTaskContainer);
   newTaskContainer.setAttribute("draggable", "true");
+
+  const id =
+    Math.random().toString(36).substring(2, 5) +
+    Math.random().toString(36).substring(2, 5);
+    
+  newTaskContainer.setAttribute("data-id", id);
+  taskId = newTaskContainer.getAttribute("data-id");
+
   if (colorPriority === "high") {
     newTaskContainer.style.borderTop = "1rem solid #ff65a3";
   } else if (colorPriority === "med") {
@@ -98,9 +114,10 @@ const insertTaskContainer = (dueDate, colorPriority, todoTask) => {
   deleteBtn.innerText = "🗑️❌";
   deleteBtn.addEventListener("click", deleteTask);
 };
+
 const addTask = addBtn.addEventListener("click", () => {
   insertTaskContainer(dateInput.value, color.value, taskInput.value);
-  todos.push({ date, priority, task });
+  todos.push({ date, priority, task, taskId, container: "to-do" });
   sortTodos();
   setItems();
   taskInput.value = "";
@@ -111,15 +128,25 @@ const addTask = addBtn.addEventListener("click", () => {
 
 const setItems = () => {
   window.localStorage.setItem("todo_list", JSON.stringify(todos));
+  window.localStorage.setItem("inProgress_list", JSON.stringify(inProgress));
 };
 
 const loadTasks = () => {
-  let tasks = Array.from(
+  let todoTasks = Array.from(
     JSON.parse(window.localStorage.getItem("todo_list")) || []
   );
-  todos.push(...tasks);
+  todos.push(...todoTasks);
 
   todos.map((item) => {
+    insertTaskContainer(item.date, item.priority, item.task);
+  });
+
+  let inProgressTasks = Array.from(
+    JSON.parse(window.localStorage.getItem("inProgress_list")) || []
+  );
+  inProgress.push(...inProgressTasks);
+
+  inProgress.map((item) => {
     insertTaskContainer(item.date, item.priority, item.task);
   });
 
