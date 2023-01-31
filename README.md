@@ -12,6 +12,7 @@ A Kanban board is a tool that provides a visual system to manage project tasks a
 * Sort task automatically (Due date)
 * Task content editable
 * Delete task option
+* responsive
 
 ## Demo:
 View project demo at https://jb-to-do-app.netlify.app/

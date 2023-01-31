@@ -23,18 +23,18 @@
   <body>
     <div class="wrapper">
       <h1>To Do App / Kanban Board</h1>
-      <section class="add_task" >
-        <input type="text" name="task" id="task_input" /><label for="date"
+      <div class="add_task">
+        <input type="text" name="task" id="task_input" /><label for="date_input"
           >Due to</label
         >
         <input type="date" id="date_input" />
-        <label for="color">Priority</label>
+        <label for="color_pick">Priority</label>
         <select id="color_pick">
           <option class="high" value="high">High</option>
           <option class="med" value="med">Medium</option>
-          <option class="soso" value="soso">So so ...</option></select
+          <option class="low" value="low">Low</option></select
         ><button id="add_btn">Add task</button>
-      </section>
+      </div>
       <div class="container">
         <section class="to_do grid_item columns" id="to_do">
           <h2>To Do</h2>
