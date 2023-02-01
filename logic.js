@@ -92,7 +92,7 @@ const renderTask = (task) => {
   }
 
   newTaskContainer.addEventListener(events[0], dragStart);
-  newTaskContainer.addEventListener(events[1], dragEnd);
+  newTaskContainer.addEventListener(events[1], dragOver);
   newTaskContainer.addEventListener(events[2], dragDrop);
 
   const newTaskInput = document.createElement("p");
