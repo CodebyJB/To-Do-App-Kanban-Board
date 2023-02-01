@@ -43,7 +43,8 @@ columns.forEach((column) => {
   column.addEventListener("dragover", dragOver);
   column.addEventListener("drop", dragDrop);
 });
-let dragItem = null;
+// let dragItem = null;
+let dragItem;
 
 function dragStart(e) {
   dragItem = this;
