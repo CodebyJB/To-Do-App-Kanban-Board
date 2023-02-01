@@ -33,6 +33,11 @@ const addTask = () => {
 
 addBtn.addEventListener("click", addTask);
 
+let isTouchDevice = "ontouchstart" in document.documentElement;
+let events = isTouchDevice
+  ? ["touchstart", "touchmove", "touchend"]
+  : ["mousedown", "mousemove", "mouseup"];
+
 const columns = Array.from(document.querySelectorAll(".columns"));
 columns.forEach((column) => {
   column.addEventListener("dragover", dragOver);
@@ -40,15 +45,15 @@ columns.forEach((column) => {
 });
 let dragItem = null;
 
-function dragStart() {
+function dragStart(e) {
   dragItem = this;
 }
 
-function dragEnd() {
+function dragEnd(e) {
   dragItem = null;
 }
 
-function dragDrop() {
+function dragDrop(e) {
   this.append(dragItem);
   const containerId = dragItem.getAttribute("data-id");
   const container = tasks.find((item) => {
@@ -86,8 +91,9 @@ const renderTask = (task) => {
     newTaskContainer.style.borderTop = "1rem solid #7afcff";
   }
 
-  newTaskContainer.addEventListener("dragstart", dragStart);
-  newTaskContainer.addEventListener("dragend", dragEnd);
+  newTaskContainer.addEventListener(events[0], dragStart);
+  newTaskContainer.addEventListener(events[1], dragEnd);
+  newTaskContainer.addEventListener(events[2], dragDrop);
 
   const newTaskInput = document.createElement("p");
   newTaskInput.setAttribute("contenteditable", "true");
